@@ -52,7 +52,7 @@ model Base {
   townHall    String?
   type        String[] @default([])
   baseUrl     String
-  likes       Int      @default(0)
+  likes       String[] @default([]) @db.ObjectId
   downloads   Int      @default(0)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Footer from '../components/Footer';
 import { FaGooglePlay } from 'react-icons/fa';
 import { GrAppleAppStore } from 'react-icons/gr';
+import { isMobile } from 'react-device-detect';
 
 const LandingPage = () => {
   const handleGooglePlayClick = () => {
@@ -22,8 +23,8 @@ const LandingPage = () => {
 
   return (
     <div
-      style={{ backgroundImage: 'url(/images/coc_wallpaper.jpg)' }}
-      className="bg-cover bg-center bg-no-repeat h-screen w-screen flex flex-col justify-center items-center"
+      style={{ backgroundImage: isMobile ? undefined : 'url(/images/coc_wallpaper.jpg)' }}
+      className="bg-cover bg-center bg-no-repeat min-h-full w-screen flex flex-col justify-center items-center"
     >
       <h1 className="text-2xl text-center lg:text-5xl font-extrabold italic mt-32 lg:mt-22 mb-8 text-neutral-950">
         Do you have Clash of Clans installed?
@@ -64,7 +65,7 @@ const LandingPage = () => {
           Apple App Store
         </button>
       </div>
-      <div className='flex-grow' />
+      <div className='flex-grow mt-3' />
       <Footer />
     </div>
   );
