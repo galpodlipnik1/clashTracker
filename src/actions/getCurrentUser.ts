@@ -1,12 +1,11 @@
-import prisma from '@/lib/prismadb'
-import getSession from './getSession'
-
+import prisma from '@/lib/prismadb';
+import getSession from './getSession';
 
 const getCurrentUser = async () => {
   try {
     const session = await getSession();
     if (!session?.user?.email) {
-      return null
+      return null;
     }
 
     const user = await prisma.user.findUnique({
@@ -18,7 +17,7 @@ const getCurrentUser = async () => {
     }
 
     return user;
-  } catch (error:any) {
+  } catch (error: any) {
     return null;
   }
 };

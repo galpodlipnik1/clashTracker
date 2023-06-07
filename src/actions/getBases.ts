@@ -1,6 +1,6 @@
-'use server'
+'use server';
 
-import prisma from '@/lib/prismadb'
+import prisma from '@/lib/prismadb';
 
 const getBases = async () => {
   try {
@@ -12,7 +12,7 @@ const getBases = async () => {
     });
 
     return bases;
-  } catch (error:any) {
+  } catch (error: any) {
     return [];
   }
 };

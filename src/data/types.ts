@@ -7,7 +7,7 @@ const types = [
   {
     id: 2,
     name: 'Trophy',
-    value: 'trophy', 
+    value: 'trophy',
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const types = [
     id: 6,
     name: 'Upgrade',
     value: 'upgrade',
-  }
-]
+  },
+];
 
-export default types
+export default types;

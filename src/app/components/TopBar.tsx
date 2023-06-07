@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
@@ -15,7 +15,7 @@ const TopBar = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="h-full">
-      <nav className="border-gray-200 bg-gray-900 fixed inset-x-0">
+      <nav className="border-gray-200 bg-gray-900 fixed inset-x-0 z-40">
         <div className="max-w-screen flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
@@ -26,11 +26,7 @@ const TopBar = ({ children }: { children: React.ReactNode }) => {
           </div>
           <div className="flex items-center flex-row-reverse">
             <div className="md:hidden">
-              <button
-                type="button"
-                className="text-white"
-                onClick={toggleMenu}
-              >
+              <button type="button" className="text-white" onClick={toggleMenu}>
                 <svg
                   className="w-6 h-6 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,37 +92,39 @@ const TopBar = ({ children }: { children: React.ReactNode }) => {
                 </li>
               </ul>
             </div>
-              {session && session?.data?.user?.email ? (
-                <Link
-                  href="/user"
-                  className="flex mx-10 text-sm rounded-full md:mr-0 flex-col items-center hover:scale-105 transition transform"
-                >
-                  <span className="sr-only">user</span>
-                  <Image
-                    className="rounded-full"
-                    width={32}
-                    height={32}
-                    src={session.data.user.image || '/images/placeholder.jpg'}
-                    alt="user photo"
-                  />
-                  <span className="text-sm text-gray-100">{session.data.user.name}</span>
-                </Link>
-              ) : (
-                <Link
-                  href="/auth"
-                  className="flex mx-10 text-sm rounded-full md:mr-0 flex-col items-center hover:scale-105 transition transform"
-                >
-                  <span className="sr-only">user</span>
-                  <Image
-                    className="rounded-full"
-                    width={32}
-                    height={32}
-                    src="/images/placeholder.jpg"
-                    alt="user photo"
-                  />
-                  <span className="text-sm text-gray-100">Sign In</span>
-                </Link>
-              )}
+            {session && session?.data?.user?.email ? (
+              <Link
+                href="/user"
+                className="flex mx-10 text-sm rounded-full md:mr-0 flex-col items-center hover:scale-105 transition transform"
+              >
+                <span className="sr-only">user</span>
+                <Image
+                  className="rounded-full"
+                  width={32}
+                  height={32}
+                  src={session.data.user.image || '/images/placeholder.jpg'}
+                  alt="user photo"
+                />
+                <span className="text-sm text-gray-100">
+                  {session.data.user.name}
+                </span>
+              </Link>
+            ) : (
+              <Link
+                href="/auth"
+                className="flex mx-10 text-sm rounded-full md:mr-0 flex-col items-center hover:scale-105 transition transform"
+              >
+                <span className="sr-only">user</span>
+                <Image
+                  className="rounded-full"
+                  width={32}
+                  height={32}
+                  src="/images/placeholder.jpg"
+                  alt="user photo"
+                />
+                <span className="text-sm text-gray-100">Sign In</span>
+              </Link>
+            )}
           </div>
         </div>
         {isMenuOpen && (

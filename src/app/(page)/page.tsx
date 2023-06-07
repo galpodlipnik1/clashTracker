@@ -1,27 +1,37 @@
 'use client';
 
 import Image from 'next/image';
+import Footer from '../components/Footer';
 import { FaGooglePlay } from 'react-icons/fa';
 import { GrAppleAppStore } from 'react-icons/gr';
 
 const LandingPage = () => {
   const handleGooglePlayClick = () => {
-    window.open('https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en_US&gl=US', '_blank');
+    window.open(
+      'https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en_US&gl=US',
+      '_blank'
+    );
   };
 
   const handleAppleStoreClick = () => {
-    window.open('https://apps.apple.com/us/app/clash-of-clans/id529479190', '_blank');
+    window.open(
+      'https://apps.apple.com/us/app/clash-of-clans/id529479190',
+      '_blank'
+    );
   };
 
   return (
-    <div style={{ backgroundImage: 'url(/images/coc_wallpaper.jpg)' }} className="bg-cover bg-center bg-no-repeat h-screen w-screen flex flex-col justify-center items-center">
-      <h1 className="text-2xl text-center lg:text-5xl font-bold mt-10 lg:mt-4 mb-8 text-gray-100 bg-neutral-900 p-4 rounded-full">
+    <div
+      style={{ backgroundImage: 'url(/images/coc_wallpaper.jpg)' }}
+      className="bg-cover bg-center bg-no-repeat h-screen w-screen flex flex-col justify-center items-center"
+    >
+      <h1 className="text-2xl text-center lg:text-5xl font-bold mt-32 lg:mt-22 mb-8 text-gray-100 bg-neutral-900 p-4 rounded-full">
         Do you have Clash of Clans installed?
       </h1>
       <div className="w-full flex justify-around items-center lg:flex-row flex-col">
         <div className="mx-auto mb-6">
           <Image
-            className='rounded-full'
+            className="rounded-full"
             src="/images/coc_img.png"
             alt="Clash of Clans"
             width={200}
@@ -53,6 +63,8 @@ const LandingPage = () => {
           Apple App Store
         </button>
       </div>
+      <div className='flex-grow' />
+      <Footer />
     </div>
   );
 };

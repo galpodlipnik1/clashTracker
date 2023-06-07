@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prisma": "prisma generate",
+    "postinstall": "prisma generate",
     "format": "prettier --write ."
   },
   "dependencies": {

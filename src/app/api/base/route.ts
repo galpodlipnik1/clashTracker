@@ -1,6 +1,6 @@
-import getCurrentUser from "@/actions/getCurrentUser";
-import prisma from "@/lib/prismadb";
-import { NextResponse } from "next/server";
+import getCurrentUser from '@/actions/getCurrentUser';
+import prisma from '@/lib/prismadb';
+import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
@@ -18,12 +18,11 @@ export async function POST(request: Request) {
         type,
         baseUrl,
         userId: currentUser?.id ? currentUser.id : null,
-      }
+      },
     });
 
     return NextResponse.json(newBase);
- 
-  } catch (error:any) {
-    return new NextResponse('Internal Error', { status: 500 })
+  } catch (error: any) {
+    return new NextResponse('Internal Error', { status: 500 });
   }
 }

@@ -21,7 +21,7 @@ const AuthForm = () => {
 
   useEffect(() => {
     if (session?.status === 'authenticated') {
-      router.push('/user');
+      router.push('/');
     }
   }, [session?.status, router]);
 
@@ -142,16 +142,16 @@ const AuthForm = () => {
         </div>
         <div className="flex gap-2 justify-center text-sm mt-6 px-2 text-gray-500">
           <div>
-            {variant === 'LOGIN'
-              ? 'New here?'
-              : 'Already have an account?'}
+            {variant === 'LOGIN' ? 'New here?' : 'Already have an account?'}
           </div>
           <div onClick={toggleVariant} className="underline cursor-pointer">
             {variant === 'LOGIN' ? 'Create an account' : 'Login'}
           </div>
         </div>
-        <div className='flex justify-center text-sm mt-3 text-gray-500'>
-          <span onClick={() => router.push('/')} className='cursor-pointer'>Back?</span>
+        <div className="flex justify-center text-sm mt-3 text-gray-500">
+          <span onClick={() => router.push('/')} className="cursor-pointer">
+            Back?
+          </span>
         </div>
       </div>
     </div>
