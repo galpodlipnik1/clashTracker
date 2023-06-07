@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from '@/app/components/ui/card';
 import { FullBase } from '@/types';
+import Image from 'next/image';
 import { BiLike } from 'react-icons/bi';
 
 interface BaseItemProps {
@@ -18,10 +19,12 @@ const BaseItem: React.FC<BaseItemProps> = ({ base }) => {
   return (
     <Card className="bg-neutral-900 border-0 w-full max-w-xs shadow-xl flex flex-col">
       <CardHeader className="p-0 relative flex">
-        <img
+        <Image
           src={base.image || '/images/coc_wallpaper.jpg'}
           alt={base.name}
           className="w-full h-40 object-cover rounded-t-lg"
+          width={600}
+          height={1}
         />
         <div className="absolute z-40 top-0 right-0 m-2">
           <div className="flex justify-center items-center bg-neutral-900 rounded-full w-8 h-8">
@@ -60,7 +63,7 @@ const BaseItem: React.FC<BaseItemProps> = ({ base }) => {
               className="bg-neutral-700 text-white font-bold hover:bg-gray-400 hover:text-black"
               onClick={() => window.open(base.baseUrl, '_blank')}
             >
-              Open
+              Use Base
             </Button>
           </div>
         </div>

@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from '@/app/components/ui/dropdown-menu';
 import { Button } from '@/app/components/ui/button';
+import Image from 'next/image';
 
 interface SelectProps {
   placeholder: string;
@@ -50,10 +51,11 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>
             <div className="flex flex-row items-center">
-              <img
+              <Image
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
+                width={32} height={32}
               />
               <p className="ml-2 font-bold">Town halls 1-3</p>
             </div>
@@ -65,7 +67,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 onClick={(e) => handleClick(e, item)}
               >
                 <div className="flex flex-row items-center p-2">
-                  <img src={item.img} alt={item.name} className="w-8 h-8" />
+                  <Image src={item.img} alt={item.name} className="w-8 h-8" width={32} height={32} />
                   <p className="ml-2 font-bold">{item.name}</p>
                 </div>
               </DropdownMenuItem>
@@ -75,7 +77,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>
             <div className="flex flex-row items-center">
-              <img
+              <Image
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
@@ -90,7 +92,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 onClick={(e) => handleClick(e, item)}
               >
                 <div className="flex flex-row items-center p-2">
-                  <img src={item.img} alt={item.name} className="w-8 h-8" />
+                  <Image src={item.img} alt={item.name} className="w-8 h-8" width={32} height={32} />
                   <p className="ml-2 font-bold">{item.name}</p>
                 </div>
               </DropdownMenuItem>
@@ -100,10 +102,11 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>
             <div className="flex flex-row items-center">
-              <img
+              <Image
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
+                width={32} height={32}
               />
               <p className="ml-2 font-bold">Town halls 7-9</p>
             </div>
@@ -115,7 +118,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 onClick={(e) => handleClick(e, item)}
               >
                 <div className="flex flex-row items-center p-2">
-                  <img src={item.img} alt={item.name} className="w-8 h-8" />
+                  <Image src={item.img} alt={item.name} className="w-8 h-8" width={32} height={32} />
                   <p className="ml-2 font-bold">{item.name}</p>
                 </div>
               </DropdownMenuItem>
@@ -125,7 +128,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>
             <div className="flex flex-row items-center">
-              <img
+              <Image
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
@@ -140,7 +143,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 onClick={(e) => handleClick(e, item)}
               >
                 <div className="flex flex-row items-center p-2">
-                  <img src={item.img} alt={item.name} className="w-8 h-8" />
+                  <Image src={item.img} alt={item.name} className="w-8 h-8" width={32} height={32} />
                   <p className="ml-2 font-bold">{item.name}</p>
                 </div>
               </DropdownMenuItem>
@@ -150,7 +153,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>
             <div className="flex flex-row items-center">
-              <img
+              <Image
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
@@ -165,7 +168,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 onClick={(e) => handleClick(e, item)}
               >
                 <div className="flex flex-row items-center p-2">
-                  <img src={item.img} alt={item.name} className="w-8 h-8" />
+                  <Image src={item.img} alt={item.name} className="w-8 h-8" width={32} height={32} />
                   <p className="ml-2 font-bold">{item.name}</p>
                 </div>
               </DropdownMenuItem>
