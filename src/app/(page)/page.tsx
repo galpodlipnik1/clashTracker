@@ -47,7 +47,8 @@ const LandingPage = () => {
           />
         </div>
       </div>
-      <div className="flex space-y-5 lg:space-x-5 lg:space-y-0 mt-8 flex-col lg:flex-row">
+      <div className='flex-grow' />
+      <div className="h-full flex lg:items-end space-y-5 lg:space-x-5 lg:space-y-0 mt-8 lg:mb-12 flex-col lg:flex-row">
         <button
           className="bg-red-500 hover:bg-red-600 text-white p-4 rounded flex items-center"
           onClick={handleGooglePlayClick}
