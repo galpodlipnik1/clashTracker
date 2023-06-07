@@ -27,7 +27,7 @@ const BaseItem: React.FC<BaseItemProps> = ({ base }) => {
           height={1}
         />
         <div className="absolute z-40 top-0 right-0 m-2">
-          <div className="flex justify-center items-center bg-neutral-900 rounded-full w-8 h-8">
+          <div className="flex justify-center items-center bg-neutral-900 rounded-full w-8 h-8 cursor-pointer hover:bg-neutral-600">
             <BiLike className="text-gray-300" />
           </div>
         </div>

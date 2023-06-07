@@ -25,7 +25,7 @@ const LandingPage = () => {
       style={{ backgroundImage: 'url(/images/coc_wallpaper.jpg)' }}
       className="bg-cover bg-center bg-no-repeat h-screen w-screen flex flex-col justify-center items-center"
     >
-      <h1 className="text-2xl text-center lg:text-5xl font-bold mt-32 lg:mt-22 mb-8 text-gray-100 bg-neutral-900 p-4 rounded-full">
+      <h1 className="text-2xl text-center lg:text-5xl font-extrabold italic mt-32 lg:mt-22 mb-8 text-neutral-950">
         Do you have Clash of Clans installed?
       </h1>
       <div className="w-full flex justify-around items-center lg:flex-row flex-col">

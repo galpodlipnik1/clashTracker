@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { FullBase } from '@/types';
 import BaseItem from './components/BaseItem';
 import Footer from '../components/Footer';
+import { isMobile } from 'react-device-detect';
 
 type TownHall = {
   value: string;
@@ -29,7 +30,6 @@ const Bases = () => {
   });
   const [bases, setBases] = useState<FullBase[]>([]);
   const [filteredBases, setFilteredBases] = useState<FullBase[]>([]);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -41,19 +41,6 @@ const Bases = () => {
     };
 
     fetchBases();
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   useEffect(() => {
@@ -90,7 +77,7 @@ const Bases = () => {
           ? undefined
           : 'url(/images/coc_wallpaper.jpg)',
       }}
-      className="bg-gradient-to-r from-[#f6d365] to-[#fda085] bg-cover bg-center bg-no-repeat min-h-screen w-full flex flex-col justify-start items-center"
+      className="bg-cover bg-center bg-no-repeat min-h-screen w-full flex flex-col justify-start items-center"
     >
       <h1 className="text-4xl text-center text-neutral-900 font-extrabold mt-24 mb-8">
         Base Designs for Clash of Clans

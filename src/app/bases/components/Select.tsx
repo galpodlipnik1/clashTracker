@@ -81,6 +81,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
+                width={32} height={32}
               />
               <p className="ml-2 font-bold">Town halls 4-6</p>
             </div>
@@ -132,6 +133,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
+                width={32} height={32}
               />
               <p className="ml-2 font-bold">Town halls 10-12</p>
             </div>
@@ -157,6 +159,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
+                width={32} height={32}
               />
               <p className="ml-2 font-bold">Town halls 13-15</p>
             </div>
