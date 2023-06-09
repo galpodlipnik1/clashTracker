@@ -103,7 +103,7 @@ const Bases = () => {
           <BaseItem key={base.id} base={base} />
         ))}
       </div>
-      <div className='flex-grow mt-5' />
+      <div className="flex-grow mt-5" />
       <Footer />
     </div>
   );

@@ -23,7 +23,11 @@ const LandingPage = () => {
 
   return (
     <div
-      style={{ backgroundImage: isMobile ? undefined : 'url(/images/coc_wallpaper.jpg)' }}
+      style={{
+        backgroundImage: isMobile
+          ? undefined
+          : 'url(/images/coc_wallpaper.jpg)',
+      }}
       className="bg-cover bg-center bg-no-repeat min-h-full w-screen flex flex-col justify-center items-center"
     >
       <h1 className="text-2xl text-center lg:text-5xl font-extrabold italic mt-32 lg:mt-22 mb-8 text-neutral-950">
@@ -48,7 +52,7 @@ const LandingPage = () => {
           />
         </div>
       </div>
-      <div className='flex-grow' />
+      <div className="flex-grow" />
       <div className="h-full flex lg:items-end space-y-5 lg:space-x-5 lg:space-y-0 mt-8 lg:mb-12 flex-col lg:flex-row">
         <button
           className="bg-red-500 hover:bg-red-600 text-white p-4 rounded flex items-center"
@@ -65,7 +69,7 @@ const LandingPage = () => {
           Apple App Store
         </button>
       </div>
-      <div className='flex-grow mt-3' />
+      <div className="flex-grow mt-3" />
       <Footer />
     </div>
   );

@@ -55,7 +55,8 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
-                width={32} height={32}
+                width={32}
+                height={32}
               />
               <p className="ml-2 font-bold">Town halls 1-3</p>
             </div>
@@ -67,7 +68,13 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 onClick={(e) => handleClick(e, item)}
               >
                 <div className="flex flex-row items-center p-2">
-                  <Image src={item.img} alt={item.name} className="w-8 h-8" width={32} height={32} />
+                  <Image
+                    src={item.img}
+                    alt={item.name}
+                    className="w-8 h-8"
+                    width={32}
+                    height={32}
+                  />
                   <p className="ml-2 font-bold">{item.name}</p>
                 </div>
               </DropdownMenuItem>
@@ -81,7 +88,8 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
-                width={32} height={32}
+                width={32}
+                height={32}
               />
               <p className="ml-2 font-bold">Town halls 4-6</p>
             </div>
@@ -93,7 +101,13 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 onClick={(e) => handleClick(e, item)}
               >
                 <div className="flex flex-row items-center p-2">
-                  <Image src={item.img} alt={item.name} className="w-8 h-8" width={32} height={32} />
+                  <Image
+                    src={item.img}
+                    alt={item.name}
+                    className="w-8 h-8"
+                    width={32}
+                    height={32}
+                  />
                   <p className="ml-2 font-bold">{item.name}</p>
                 </div>
               </DropdownMenuItem>
@@ -107,7 +121,8 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
-                width={32} height={32}
+                width={32}
+                height={32}
               />
               <p className="ml-2 font-bold">Town halls 7-9</p>
             </div>
@@ -119,7 +134,13 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 onClick={(e) => handleClick(e, item)}
               >
                 <div className="flex flex-row items-center p-2">
-                  <Image src={item.img} alt={item.name} className="w-8 h-8" width={32} height={32} />
+                  <Image
+                    src={item.img}
+                    alt={item.name}
+                    className="w-8 h-8"
+                    width={32}
+                    height={32}
+                  />
                   <p className="ml-2 font-bold">{item.name}</p>
                 </div>
               </DropdownMenuItem>
@@ -133,7 +154,8 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
-                width={32} height={32}
+                width={32}
+                height={32}
               />
               <p className="ml-2 font-bold">Town halls 10-12</p>
             </div>
@@ -145,7 +167,13 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 onClick={(e) => handleClick(e, item)}
               >
                 <div className="flex flex-row items-center p-2">
-                  <Image src={item.img} alt={item.name} className="w-8 h-8" width={32} height={32} />
+                  <Image
+                    src={item.img}
+                    alt={item.name}
+                    className="w-8 h-8"
+                    width={32}
+                    height={32}
+                  />
                   <p className="ml-2 font-bold">{item.name}</p>
                 </div>
               </DropdownMenuItem>
@@ -159,7 +187,8 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 src="/images/townHalls/th1.png"
                 alt="Town Hall 1"
                 className="w-8 h-8"
-                width={32} height={32}
+                width={32}
+                height={32}
               />
               <p className="ml-2 font-bold">Town halls 13-15</p>
             </div>
@@ -171,7 +200,13 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
                 onClick={(e) => handleClick(e, item)}
               >
                 <div className="flex flex-row items-center p-2">
-                  <Image src={item.img} alt={item.name} className="w-8 h-8" width={32} height={32} />
+                  <Image
+                    src={item.img}
+                    alt={item.name}
+                    className="w-8 h-8"
+                    width={32}
+                    height={32}
+                  />
                   <p className="ml-2 font-bold">{item.name}</p>
                 </div>
               </DropdownMenuItem>
