@@ -31,9 +31,9 @@ const Select: React.FC<SelectProps> = ({ placeholder, onClick }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="default" className="mt-4 p-6">
-          {placeholder}
-        </Button>
+      <Button variant="default" className="mt-4 p-6 ">
+        {placeholder}
+      </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel

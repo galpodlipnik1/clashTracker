@@ -8,14 +8,14 @@ export async function POST(request: Request) {
 
     const body = await request.json();
     const { name, description, image, townHall, type, baseUrl } = body;
-
+    
     const newBase = await prisma.base.create({
       data: {
         name,
         description,
         image,
-        townHall,
-        type,
+        townHall: townHall.toLowerCase(),
+        type: type.map((t: any) => t.label.toLowerCase()),
         baseUrl,
         userId: currentUser?.id ? currentUser.id : null,
       },
@@ -23,6 +23,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json(newBase);
   } catch (error: any) {
+    console.log(error);
     return new NextResponse('Internal Error', { status: 500 });
   }
 }

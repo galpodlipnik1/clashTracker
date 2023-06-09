@@ -8,6 +8,9 @@ import { FullBase } from '@/types';
 import BaseItem from './components/BaseItem';
 import Footer from '../components/Footer';
 import { isMobile } from 'react-device-detect';
+import { PacmanLoader } from 'react-spinners';
+import { Button } from '../components/ui/button';
+import AddBaseModal from './components/AddBaseModal';
 
 type TownHall = {
   value: string;
@@ -31,6 +34,7 @@ const Bases = () => {
   const [bases, setBases] = useState<FullBase[]>([]);
   const [filteredBases, setFilteredBases] = useState<FullBase[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchBases = async () => {
@@ -71,17 +75,24 @@ const Bases = () => {
   };
 
   return (
-    <div
+    <>
+      <AddBaseModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <div
       style={{
         backgroundImage: isMobile
           ? undefined
           : 'url(/images/coc_wallpaper.jpg)',
       }}
       className="bg-cover bg-center bg-no-repeat min-h-screen w-full flex flex-col justify-start items-center"
-    >
-      <h1 className="text-4xl text-center text-neutral-900 font-extrabold mt-24 mb-8">
-        Base Designs for Clash of Clans
-      </h1>
+      >
+      <div className="flex items-center justify-center w-full mt-24 mb-8">
+        <h1 className="text-4xl text-right text-neutral-900 font-extrabold w-2/3">
+          Base Designs for Clash of Clans
+        </h1>
+        <div className="flex items-center justify-end w-1/3 pr-5">
+          <Button className='rounded-2xl' onClick={() => setIsOpen(true)}> Add Base</Button>
+        </div>
+      </div>
       <div className="flex flex-col lg:flex-row items-center justify-between w-1/3">
         <Select
           placeholder={`${
@@ -93,19 +104,26 @@ const Bases = () => {
         />
         <Search
           placeholder={`${
-            selectedType.name !== '' ? selectedType.name : 'Select type of base'
+            selectedType.name !== '' ? selectedType.name : 'Select base type'
           }`}
           onClick={handleType}
         />
       </div>
       <div className="flex flex-wrap mt-8 px-16 gap-4 w-full">
-        {filteredBases.map((base: FullBase) => (
-          <BaseItem key={base.id} base={base} />
-        ))}
+        {loading ? (
+          <div className="flex items-center justify-center w-full mt-24">
+            <PacmanLoader color={'#36d7b7'} />
+          </div>
+        ) : (
+          filteredBases.map((base: FullBase) => (
+            <BaseItem key={base.id} base={base} />
+          ))
+        )}
       </div>
       <div className="flex-grow mt-5" />
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
