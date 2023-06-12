@@ -18,6 +18,7 @@ import { BiLike } from 'react-icons/bi';
 import { AiFillLike } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
 import { User } from '@prisma/client';
+import addDownloads from '@/actions/addDownloads';
 
 interface BaseItemProps {
   base: FullBase;
@@ -47,6 +48,12 @@ const BaseItem: React.FC<BaseItemProps> = ({ base }) => {
       toast.error('You need to be logged in to like a base');
     }
     setBaseLikes(res.data.likes);
+  };
+
+  const handleDownload = async () => {
+    const downloads = await addDownloads(base.id);
+    base.downloads = downloads ? downloads : base.downloads;
+    window.open(base.baseUrl, '_blank')
   };
   return (
     <Card className="bg-neutral-900 border-0 w-full max-w-xs shadow-xl flex flex-col">
@@ -109,7 +116,7 @@ const BaseItem: React.FC<BaseItemProps> = ({ base }) => {
             <Button
               variant="default"
               className="bg-neutral-700 text-white font-bold hover:bg-gray-400 hover:text-black"
-              onClick={() => window.open(base.baseUrl, '_blank')}
+              onClick={handleDownload}
             >
               Use Base
             </Button>
