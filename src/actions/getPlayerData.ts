@@ -11,7 +11,6 @@ export async function getPlayerData(playerId: string) {
 
     const response = await axios.get(endpoint, { headers });
     const data = response.data;
-
     return data;
   } catch (error: any) {
     return { status: error.response.status };

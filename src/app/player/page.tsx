@@ -30,6 +30,9 @@ const Player = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
     const res = await getPlayerData(encodeURIComponent(data.tag));
+
+    console.log(res);
+    
     if (res?.status === 404) {
       setIsLoading(false);
       toast.error('Player not found');
