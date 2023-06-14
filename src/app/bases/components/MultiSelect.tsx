@@ -1,16 +1,22 @@
-'use client'
+'use client';
 
-import ReactSelect from 'react-select'
+import ReactSelect from 'react-select';
 
 interface SelectProps {
-  label: string
-  value ?: Record<string, any>
-  onChange: (value: Record<string, any>) => void
-  options: Record<number, any>[]
-  disabled ?: boolean
+  label: string;
+  value?: Record<string, any>;
+  onChange: (value: Record<string, any>) => void;
+  options: Record<number, any>[];
+  disabled?: boolean;
 }
 
-const MultiSelect:React.FC<SelectProps> = ({ label, value, onChange, options, disabled }) => {
+const MultiSelect: React.FC<SelectProps> = ({
+  label,
+  value,
+  onChange,
+  options,
+  disabled,
+}) => {
   return (
     <div className="z-[100]">
       <label
@@ -42,6 +48,6 @@ const MultiSelect:React.FC<SelectProps> = ({ label, value, onChange, options, di
       </div>
     </div>
   );
-}
+};
 
-export default MultiSelect
+export default MultiSelect;

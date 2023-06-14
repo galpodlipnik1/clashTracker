@@ -1,6 +1,6 @@
-'use server'
+'use server';
 
-import axios from "axios";
+import axios from 'axios';
 
 export async function getPlayerData(playerId: string) {
   try {
@@ -14,6 +14,6 @@ export async function getPlayerData(playerId: string) {
 
     return data;
   } catch (error: any) {
-    return { status: error.response.status};
+    return { status: error.response.status };
   }
 }

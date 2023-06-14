@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import clsx from 'clsx';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 
@@ -13,7 +13,16 @@ interface SearchProps {
   disabled?: boolean;
 }
 
-const Search:React.FC<SearchProps> = ({ id, placeholder, value, type = 'text', required, register, errors, disabled }) => {
+const Search: React.FC<SearchProps> = ({
+  id,
+  placeholder,
+  value,
+  type = 'text',
+  required,
+  register,
+  errors,
+  disabled,
+}) => {
   return (
     <input
       type={type}
@@ -27,7 +36,7 @@ const Search:React.FC<SearchProps> = ({ id, placeholder, value, type = 'text', r
         errors[id] && 'border-red-500'
       )}
     />
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

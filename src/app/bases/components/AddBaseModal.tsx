@@ -27,11 +27,7 @@ const BaseTypesRecord: Record<number, any> = {
   5: 'Upgrade',
 };
 
-
-const AddBaseModal: React.FC<AddBaseModalProps> = ({
-  isOpen,
-  onClose
-}) => {
+const AddBaseModal: React.FC<AddBaseModalProps> = ({ isOpen, onClose }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -60,7 +56,7 @@ const AddBaseModal: React.FC<AddBaseModalProps> = ({
 
     axios
       .post('/api/base', {
-        ...data
+        ...data,
       })
       .then(() => {
         router.refresh();
@@ -76,7 +72,7 @@ const AddBaseModal: React.FC<AddBaseModalProps> = ({
 
   const handleUpload = (result: any) => {
     setValue('image', result?.info?.secure_url, { shouldValidate: true });
-  }
+  };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -126,12 +122,24 @@ const AddBaseModal: React.FC<AddBaseModalProps> = ({
                   label: type,
                   value: index,
                 }))}
-                onChange={(value) => setValue('type', value, { shouldValidate: true })}
+                onChange={(value) =>
+                  setValue('type', value, { shouldValidate: true })
+                }
                 value={type}
               />
-              <div className='flex items-center gap-x-3'>
-                <Image width={48} height={48} className='rounded-full' src={image || '/images/noImage.jpg'} alt='base image' />
-                <CldUploadButton options={{ maxFiles: 1 }} onUpload={handleUpload} uploadPreset='clashtracker'>
+              <div className="flex items-center gap-x-3">
+                <Image
+                  width={48}
+                  height={48}
+                  className="rounded-full"
+                  src={image || '/images/noImage.jpg'}
+                  alt="base image"
+                />
+                <CldUploadButton
+                  options={{ maxFiles: 1 }}
+                  onUpload={handleUpload}
+                  uploadPreset="clashtracker"
+                >
                   <Button disabled={isLoading} type="button">
                     Upload Image
                   </Button>
@@ -161,7 +169,7 @@ const AddBaseModal: React.FC<AddBaseModalProps> = ({
               border
               border-gray-200
               `,
-              isLoading && 'opacity-50 cursor-default',
+              isLoading && 'opacity-50 cursor-default'
             )}
           >
             Cancel

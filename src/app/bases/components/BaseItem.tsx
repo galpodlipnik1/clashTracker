@@ -53,7 +53,7 @@ const BaseItem: React.FC<BaseItemProps> = ({ base }) => {
   const handleDownload = async () => {
     const downloads = await addDownloads(base.id);
     base.downloads = downloads ? downloads : base.downloads;
-    window.open(base.baseUrl, '_blank')
+    window.open(base.baseUrl, '_blank');
   };
   return (
     <Card className="bg-neutral-900 border-0 w-full max-w-xs shadow-xl flex flex-col">
@@ -103,7 +103,8 @@ const BaseItem: React.FC<BaseItemProps> = ({ base }) => {
           <div className="flex flex-col items-start">
             <div>
               <CardDescription className="text-sm text-gray-400">
-                Likes: <span className="font-bold">{baseLikes?.length || 0}</span>
+                Likes:{' '}
+                <span className="font-bold">{baseLikes?.length || 0}</span>
               </CardDescription>
             </div>
             <div>

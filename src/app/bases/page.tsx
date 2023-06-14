@@ -78,50 +78,53 @@ const Bases = () => {
     <>
       <AddBaseModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
       <div
-      style={{
-        backgroundImage: isMobile
-          ? undefined
-          : 'url(/images/coc_wallpaper.jpg)',
-      }}
-      className="bg-cover bg-center bg-no-repeat min-h-screen w-full flex flex-col justify-start items-center"
+        style={{
+          backgroundImage: isMobile
+            ? undefined
+            : 'url(/images/coc_wallpaper.jpg)',
+        }}
+        className="bg-cover bg-center bg-no-repeat min-h-screen w-full flex flex-col justify-start items-center"
       >
-      <div className="flex items-center justify-center w-full mt-24 mb-8">
-        <h1 className="text-4xl text-right text-neutral-900 font-extrabold w-2/3">
-          Base Designs for Clash of Clans
-        </h1>
-        <div className="flex items-center justify-end w-1/3 pr-5">
-          <Button className='rounded-2xl' onClick={() => setIsOpen(true)}> Add Base</Button>
-        </div>
-      </div>
-      <div className="flex flex-col lg:flex-row items-center justify-between w-1/3">
-        <Select
-          placeholder={`${
-            selectedTownHall?.name !== ''
-              ? selectedTownHall.name
-              : 'Select a town hall'
-          }`}
-          onClick={handleTownHall}
-        />
-        <Search
-          placeholder={`${
-            selectedType.name !== '' ? selectedType.name : 'Select base type'
-          }`}
-          onClick={handleType}
-        />
-      </div>
-      <div className="flex flex-wrap mt-8 px-16 gap-4 w-full">
-        {loading ? (
-          <div className="flex items-center justify-center w-full mt-24">
-            <PacmanLoader color={'#36d7b7'} />
+        <div className="flex items-center justify-center w-full mt-24 mb-8">
+          <h1 className="text-4xl text-right text-neutral-900 font-extrabold w-2/3">
+            Base Designs for Clash of Clans
+          </h1>
+          <div className="flex items-center justify-end w-1/3 pr-5">
+            <Button className="rounded-2xl" onClick={() => setIsOpen(true)}>
+              {' '}
+              Add Base
+            </Button>
           </div>
-        ) : (
-          filteredBases.map((base: FullBase) => (
-            <BaseItem key={base.id} base={base} />
-          ))
-        )}
-      </div>
-      <div className="flex-grow mt-5" />
-      <Footer />
+        </div>
+        <div className="flex flex-col lg:flex-row items-center justify-between w-1/3">
+          <Select
+            placeholder={`${
+              selectedTownHall?.name !== ''
+                ? selectedTownHall.name
+                : 'Select a town hall'
+            }`}
+            onClick={handleTownHall}
+          />
+          <Search
+            placeholder={`${
+              selectedType.name !== '' ? selectedType.name : 'Select base type'
+            }`}
+            onClick={handleType}
+          />
+        </div>
+        <div className="flex flex-wrap mt-8 px-16 gap-4 w-full">
+          {loading ? (
+            <div className="flex items-center justify-center w-full mt-24">
+              <PacmanLoader color={'#36d7b7'} />
+            </div>
+          ) : (
+            filteredBases.map((base: FullBase) => (
+              <BaseItem key={base.id} base={base} />
+            ))
+          )}
+        </div>
+        <div className="flex-grow mt-5" />
+        <Footer />
       </div>
     </>
   );
