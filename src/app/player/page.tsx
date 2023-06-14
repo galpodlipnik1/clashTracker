@@ -7,7 +7,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Button } from '../components/ui/button';
-import { getPlayerData } from '@/actions/getPlayerData';
+import { getIp, getPlayerData } from '@/actions/getPlayerData';
 import { toast } from 'react-hot-toast';
 import { PacmanLoader } from 'react-spinners';
 
@@ -31,8 +31,8 @@ const Player = () => {
     setIsLoading(true);
     const res = await getPlayerData(encodeURIComponent(data.tag));
 
-    console.log(res);
-    
+    console.log(await getIp());
+
     if (res?.status === 404) {
       setIsLoading(false);
       toast.error('Player not found');

@@ -2,6 +2,13 @@
 
 import axios from 'axios';
 
+export const getIp = async () => {
+  const endpoint = 'https://api.ipify.org?format=json';
+  const response = await axios.get(endpoint);
+  const ip = response.data.ip;
+  return ip;
+};
+
 export async function getPlayerData(playerId: string) {
   try {
     const endpoint = `https://api.clashofclans.com/v1/players/${playerId}`;
