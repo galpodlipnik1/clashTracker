@@ -7,13 +7,13 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Button } from '../components/ui/button';
-import { getIp, getPlayerData } from '@/actions/getPlayerData';
+import { getPlayerData } from '@/actions/getPlayerData';
 import { toast } from 'react-hot-toast';
 import { PacmanLoader } from 'react-spinners';
 
 const Player = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [playerData, setPlayerData] = useState(null);
+  const [playerData, setPlayerData] = useState<Object | null>(null);
   const {
     register,
     handleSubmit,
@@ -29,14 +29,8 @@ const Player = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
-    const res = await getPlayerData(encodeURIComponent(data.tag));
+    const res = await getPlayerData(data.tag);
 
-    console.log(await getIp());
-
-    if (res?.status === 404) {
-      setIsLoading(false);
-      toast.error('Player not found');
-    }
     setPlayerData(res);
     setTimeout(() => {
       setIsLoading(false);
