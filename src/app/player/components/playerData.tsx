@@ -33,7 +33,7 @@ const PlayerData:React.FC<playerDataProps> = ({ player }) => {
                     <span>{basicInfoData[0].title}</span>
                   </div>
                   {
-                    basicInfoData.slice(1, basicInfoData.length).map((item) => (
+                    basicInfoData.slice(2, basicInfoData.length).map((item) => (
                       <div className='flex flex-row justify-between items-center w-full' key={item.name}>
                         <span>{item.name}</span>
                         <span>{item.value}</span>
