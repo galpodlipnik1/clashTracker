@@ -6,6 +6,11 @@ const basicInfo = (player: any) => {
       title: player.league.name,
     },
     {
+      name: 'Builder League',
+      //value: player.builderBaseLeague.iconUrls.small,
+      title: player.builderBaseLeague.name,
+    },
+    {
       name: 'Name',
       value: player.name,
     },
