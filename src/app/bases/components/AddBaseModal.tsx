@@ -4,7 +4,6 @@ import Button from '@/app/components/Button';
 import Modal from '@/app/components/Modal';
 import Input from '@/app/components/Inputs/Input';
 import MultiSelect from './MultiSelect';
-import { BaseTypes } from '@/types';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
