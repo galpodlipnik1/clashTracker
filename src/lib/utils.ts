@@ -50,6 +50,7 @@ export function composeClashInfoFromClass(info: Player) {
         level: troop.level,
         maxLevel: troop.maxLevel,
         village: troop.village,
+        unlockBuilding: troop.unlockBuilding,
       })),
     ],
   };

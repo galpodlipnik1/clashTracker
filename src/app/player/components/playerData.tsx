@@ -120,7 +120,7 @@ const PlayerData: React.FC<playerDataProps> = ({ player }) => {
                         className="flex flex-row justify-between items-center w-full hover:bg-gray-100 p-2 rounded-lg cursor-default"
                         key={troop.name}
                       >
-                        <span>{troop.name}</span>
+                        <span>{troop.name} | {troop.unlockBuilding}</span>
                         <span>
                           <span
                             className={
@@ -166,8 +166,7 @@ const PlayerData: React.FC<playerDataProps> = ({ player }) => {
                             }
                           >
                             {achievement.stars}
-                          </span>{' '}
-                          / 3
+                          </span>{' '} / 3
                         </span>
                       </HoverCardTrigger>
                       <HoverCardContent className="w-80">
