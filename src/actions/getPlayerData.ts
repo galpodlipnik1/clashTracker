@@ -1,7 +1,6 @@
 'use server';
 
 import { composeClashInfoFromClass } from '@/lib/utils';
-import { Client } from 'clashofclans.js';
 import { connectToApi, client } from '@/lib/apiConnect';
 
 

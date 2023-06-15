@@ -7,7 +7,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Button } from '../components/ui/button';
-import { connectToApi, getPlayerData } from '@/actions/getPlayerData';
+import { getPlayerData } from '@/actions/getPlayerData';
 import { toast } from 'react-hot-toast';
 import { PacmanLoader } from 'react-spinners';
 
