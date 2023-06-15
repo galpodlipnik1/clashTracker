@@ -1,27 +1,30 @@
 'use server';
 
 import { Client } from 'clashofclans.js';
+let client: Client;
 
-const client = new Client();
-
-export async function getPlayerData(playerId: string) {
+export const connectToApi = async () => {
   try {
     const email = process.env?.COC_EMAIL;
     const password = process.env?.COC_PASSWORD;
     if (!email || !password) {
       throw new Error('Clash of Clans credentials not found');
     }
-
-    client.login({ email, password });
-    console.log(playerId);
-    
-    const player = await client.getPlayer(playerId);
-    console.log(player);
-    
-    return player;
-  } catch (error: any) {
+    if(!client) client = new Client();
+    await client.login({ email, password });
+    console.log('Logged in');
+  } catch (error) {
     console.log(error);
-    return { status: error.response?.status };
+  }
+};
+
+export async function getPlayerData(playerId: string) {
+  try {
+    if (!client) await connectToApi();
+    const player = await client.getPlayer(playerId);
+    return player;
+  } catch (error) {
+    console.log(error);
   }
 }
 

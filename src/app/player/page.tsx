@@ -4,10 +4,10 @@ import Search from '@/app/components/Search';
 import PlayerData from './components/playerData';
 import { isMobile } from 'react-device-detect';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Button } from '../components/ui/button';
-import { getPlayerData } from '@/actions/getPlayerData';
+import { connectToApi, getPlayerData } from '@/actions/getPlayerData';
 import { toast } from 'react-hot-toast';
 import { PacmanLoader } from 'react-spinners';
 
@@ -36,6 +36,7 @@ const Player = () => {
       setIsLoading(false);
     }, 1000);
   };
+
   return (
     <div
       style={{
