@@ -22,7 +22,7 @@ const PlayerData: React.FC<playerDataProps> = ({ player }) => {
   return (
     <div>
       <div className="flex flex-col justify-start items-center w-full mt-10">
-        <div className="flex flex-row justify-center items-center w-2/3 bg-white p-3 rounded-t-lg">
+        <div className="flex flex-row justify-center items-center w-full lg:w-2/3 bg-white p-3 rounded-t-lg">
           <Image
             src={`/images/townHalls/th${player.townHallLevel}.png`}
             alt="player league"
