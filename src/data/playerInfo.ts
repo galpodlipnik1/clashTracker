@@ -6,11 +6,6 @@ const basicInfo = (player: any) => {
       title: player.league.name,
     },
     {
-      name: 'Builder League',
-      //value: player.builderBaseLeague.iconUrls.small,
-      title: player.builderBaseLeague.name,
-    },
-    {
       name: 'Name',
       value: player.name,
     },
@@ -60,7 +55,7 @@ const basicInfo = (player: any) => {
     },
     {
       name: 'Labels',
-      value: player.labels.map((label: any) => label.name).join(', '),
+      value: player.labels.map((label: any) => label).join(', '),
     },
   ];
 

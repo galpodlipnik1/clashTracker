@@ -1,5 +1,6 @@
 'use server';
 
+import { composeClashInfoFromClass } from '@/lib/utils';
 import { Client } from 'clashofclans.js';
 let client: Client;
 
@@ -10,7 +11,7 @@ export const connectToApi = async () => {
     if (!email || !password) {
       throw new Error('Clash of Clans credentials not found');
     }
-    if(!client) client = new Client();
+    if (!client) client = new Client();
     await client.login({ email, password });
     console.log('Logged in');
   } catch (error) {
@@ -21,12 +22,12 @@ export const connectToApi = async () => {
 export async function getPlayerData(playerId: string) {
   try {
     if (!client) await connectToApi();
-    const player = await client.getPlayer(playerId);
+    const playerClass = await client.getPlayer(playerId);
+    const player = composeClashInfoFromClass(playerClass);
     console.log(player);
-    
+
     return player;
   } catch (error) {
     console.log(error);
   }
 }
-
