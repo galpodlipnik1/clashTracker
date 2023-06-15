@@ -1,12 +1,17 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import clsx from 'clsx';
 const TopBar = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const session = useSession();
+  const pathname = usePathname();
+  
+  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -52,7 +57,7 @@ const TopBar = ({ children }: { children: React.ReactNode }) => {
                 <li>
                   <a
                     href="/"
-                    className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0"
+                    className={clsx("block py-2 pl-3 pr-4 bg-blue-700 rounded md:bg-transparent md:p-0", pathname === '/' ? 'text-blue-500' : 'text-white')}
                   >
                     Home
                   </a>
@@ -60,7 +65,7 @@ const TopBar = ({ children }: { children: React.ReactNode }) => {
                 <li>
                   <a
                     href="/bases"
-                    className="block py-2 pl-3 pr-4 rounded md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                    className={clsx("block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700", pathname === '/bases' ? 'text-blue-500' : 'text-white')}
                   >
                     Bases
                   </a>
@@ -68,7 +73,7 @@ const TopBar = ({ children }: { children: React.ReactNode }) => {
                 <li>
                   <a
                     href="/player"
-                    className="block py-2 pl-3 pr-4 rounded md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                    className={clsx("block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700", pathname === '/player' ? 'text-blue-500' : 'text-white')}
                   >
                     Player
                   </a>
@@ -76,7 +81,7 @@ const TopBar = ({ children }: { children: React.ReactNode }) => {
                 <li>
                   <a
                     href="/clan"
-                    className="block py-2 pl-3 pr-4 rounded md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                    className={clsx("block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700", pathname === '/clan' ? 'text-blue-500' : 'text-white')}
                   >
                     Clan
                   </a>
@@ -84,7 +89,7 @@ const TopBar = ({ children }: { children: React.ReactNode }) => {
                 <li>
                   <a
                     href="/about"
-                    className="block py-2 pl-3 pr-4 rounded md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                    className={clsx("block py-2 pl-3 pr-4 rounded md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700", pathname === '/about' ? 'text-blue-500' : 'text-white')}
                   >
                     About
                   </a>
