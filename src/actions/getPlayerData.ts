@@ -22,6 +22,8 @@ export async function getPlayerData(playerId: string) {
   try {
     if (!client) await connectToApi();
     const player = await client.getPlayer(playerId);
+    console.log(player);
+    
     return player;
   } catch (error) {
     console.log(error);

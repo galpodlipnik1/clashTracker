@@ -13,7 +13,7 @@ import { PacmanLoader } from 'react-spinners';
 
 const Player = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [playerData, setPlayerData] = useState<Object | null>(null);
+  const [playerData, setPlayerData] = useState<any>(null);
   const {
     register,
     handleSubmit,
