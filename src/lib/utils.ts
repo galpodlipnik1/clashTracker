@@ -1,4 +1,4 @@
-import { Player } from 'clashofclans.js';
+import { Clan, ClanCapital, Label, Player, PlayerClan } from 'clashofclans.js';
 import { ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -58,6 +58,72 @@ export function composePlayerInfoFromClass(info: Player) {
   return player;
 }
 
-export function composeClanInfoFromClass(info: any) {
+export function composeClanInfoFromClass(info: Clan) {
+  const clan = {
+    name: info.name,
+    tag: info.tag,
+    type: info.type,
+    description: info.description,
+    location: {
+      id: info.location?.id,
+      name: info.location?.name,
+      countryCode: info.location?.countryCode,
+      isCountry: info.location?.isCountry,
+    },
+    badgeUrls: {
+      small: info.badge.small
+    },
+    clanLevel: info.level,
+    clanPoints: info.points,
+    clanVersusPoints: info.versusPoints,
+    requiredTrophies: info.requiredTrophies,
+    requiredTownhallLevel: info.requiredTownHallLevel,
+    warFrequency: info.warFrequency,
+    warWinStreak: info.warWinStreak,
+    warWins: info.warWins,
+    warTies: info.warTies,
+    warLosses: info.warLosses,
+    isWarLogPublic: info.isWarLogPublic,
+    warLeague: {
+      id: info.warLeague?.id,
+      name: info.warLeague?.name,
+    },
+    memberCount: info.memberCount,
+    labels: [...info.labels.map((label: Label) => {
+      return {
+        id: label.id,
+        name: label.name,
+        iconUrls: {
+          small: label.icon.small
+        },
+      };
+    })],
+    clanCapitalHallLevel: info.clanCapital?.capitalHallLevel,
+    isFamilyFriendly: info.isFamilyFriendly,
+    capitalPoints: info.capitalPoints,
+    capitalLeague: info.capitalLeague?.name,
+    members: [...info.members.map((member: any) => {
+      return {
+        tag: member.tag,
+        name: member.name,
+        role: member.role,
+        expLevel: member.expLevel,
+        league: {
+          id: member.league.id,
+          name: member.league.name,
+          iconUrls: {
+            small: member.league.icon.small,
+          },
+        },
+        trophies: member.trophies,
+        versusTrophies: member.versusTrophies,
+        clanRank: member.clanRank,
+        previousClanRank: member.previousClanRank,
+        donations: member.donations,
+        donationsReceived: member.donationsReceived,
+      };
+    })],
+  }
 
+  return clan;
 }

@@ -30,7 +30,8 @@ const Clan = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
     const res = await getClanData(data.tag);
-
+    console.log(res);
+    
     setClanData(res);
     setTimeout(() => {
       setIsLoading(false);
