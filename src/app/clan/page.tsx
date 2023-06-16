@@ -1,19 +1,19 @@
-'use client';
+'use client'
 
-import Search from '@/app/components/Search';
-import PlayerData from './components/playerData';
 import { isMobile } from 'react-device-detect';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { useState } from 'react';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { PacmanLoader } from 'react-spinners';
+import { getClanData } from '@/actions/getClanData';
+import Search from '../components/Search';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Button } from '../components/ui/button';
-import { getPlayerData } from '@/actions/getPlayerData';
-import { toast } from 'react-hot-toast';
-import { PacmanLoader } from 'react-spinners';
+import ClanData from './components/ClanData';
 
-const Player = () => {
+const Clan = () => {
+
   const [isLoading, setIsLoading] = useState(false);
-  const [playerData, setPlayerData] = useState<any>(null);
+  const [clanData, setClanData] = useState<any>(null);
   const {
     register,
     handleSubmit,
@@ -29,13 +29,14 @@ const Player = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
-    const res = await getPlayerData(data.tag);
+    const res = await getClanData(data.tag);
 
-    setPlayerData(res);
+    setClanData(res);
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
   };
+
 
   return (
     <div
@@ -46,9 +47,10 @@ const Player = () => {
       }}
       className="bg-cover bg-center bg-no-repeat min-h-screen w-full flex flex-col justify-start items-center"
     >
+      <h1 className="text-4xl font-bold mt-28">Look up a clan</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full mt-28 flex justify-center items-center"
+        className="w-full mt-10 flex justify-center items-center"
       >
         <Search
           id="tag"
@@ -59,20 +61,20 @@ const Player = () => {
           disabled={isLoading}
         />
         <Button type="submit" disabled={isLoading} className="ml-2 p-6">
-          <AiOutlineSearch className="text-2xl" />
+          <AiOutlineSearch className='text-2xl' />
         </Button>
       </form>
-      {isLoading && playerData ? (
-        <div className="flex items-center justify-center w-full mt-72">
-          <PacmanLoader color={'#36d7b7'} />
+      {isLoading && clanData ? (
+        <div className="flex justify-center items-center mt-10">
+          <PacmanLoader color="#fff" />
         </div>
       ) : (
-        <div className="w-full">
-          <PlayerData player={playerData} />
+        <div className='w-full'>
+          <ClanData clan={clanData} />
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Player;
+export default Clan

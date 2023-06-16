@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function composeClashInfoFromClass(info: Player) {
+export function composePlayerInfoFromClass(info: Player) {
   const player = {
     name: info.name,
     tag: info.tag,
@@ -56,4 +56,8 @@ export function composeClashInfoFromClass(info: Player) {
   };
 
   return player;
+}
+
+export function composeClanInfoFromClass(info: any) {
+
 }

@@ -1,6 +1,6 @@
 import TopBar from '../components/TopBar';
 
-export default function PlayerLayout({
+export default function ClanLayout({
   children,
 }: {
   children: React.ReactNode;

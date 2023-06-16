@@ -1,6 +1,6 @@
 'use server';
 
-import { composeClashInfoFromClass } from '@/lib/utils';
+import { composePlayerInfoFromClass } from '@/lib/utils';
 import { connectToApi, client } from '@/lib/apiConnect';
 
 
@@ -8,7 +8,7 @@ export async function getPlayerData(playerId: string) {
   try {
     if (!client) await connectToApi();
     const playerClass = await client.getPlayer(playerId);
-    const player = composeClashInfoFromClass(playerClass);
+    const player = composePlayerInfoFromClass(playerClass);
 
     return player;
   } catch (error) {
